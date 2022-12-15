@@ -1,0 +1,63 @@
+mixin list(data)
+  ul.header__list
+    each value in data
+      li.header__item
+        if ("expandable" in value)
+          .header__box
+            p.header__link= `${value["title"]}`
+            img.header__icon(src="./images/icon-arrow-down.svg", alt="arrow")
+          .header__dropdown
+            each item in value["expandable"]
+              a.header__link.header__sub-link(href="#!")
+                if ("icon" in item)
+                  img.header__icon_sub(src=item["icon"])
+                p.header__text= item["title"]
+        else 
+          a.header__link(href="#!" aria-label= value["title"])= `${value["title"]}`
+    .header__login-section
+      a.header__link(href="#!" aria-label="login") 
+        .header__button.header__button_borderless Login 
+      a.header__link(href="#!" aria-label="login") 
+        .header__button Register     
+
+mixin footer(arr)
+  .footer 
+    each value in arr 
+      img.footer__image(src= value, alt="image")
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Intro section with dropdown navigation
+    link(rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png")
+    link(rel="stylesheet", href="./style.css")
+  body 
+    .component 
+      header.component__header
+        .header 
+          a.header__link(href="#!" aria-label="home") 
+            img.header__image(src="./images/logo.svg", alt="logo")
+          img.header__burger(src="./images/icon-menu.svg" alt="menu")
+          +list([
+            {"title": "features", "expandable": [{"title": "todo list", "icon": "./images/icon-todo.svg"}, {"title": "calendar", "icon": "./images/icon-calendar.svg"}, {"title": "reminders", "icon": "./images/icon-reminders.svg"}, {"title": "planning", "icon": "./images/icon-planning.svg"}]}, 
+            {"title": "company", "expandable": [{"title": "history"}, {"title": "our team"}, {"title": "blog"}]}, 
+            {"title": "careers"}, 
+            {"title": "about"}
+            ])
+
+      main.component__main 
+        .main 
+          img.main__poster(src="./images/image-hero-mobile.png" alt="hero")
+          .main__box 
+            h1.main__header Make remote work
+            p.main__text
+              | Get your team in sync, no matter your location. Streamline processes, 
+              | create team rituals, and watch productivity soar.
+            a.main__link(href="#!" aria-label="button") 
+              .main__button Learn more
+            footer.component__footer
+              +footer(["./images/client-databiz.svg", "./images/client-audiophile.svg", "./images/client-meet.svg", "./images/client-maker.svg"])
+    script(src="./app.js")

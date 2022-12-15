@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro section with dropdown navigation</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body> 
+    <div class="component"> 
+      <header class="component__header">
+        <div class="header"> <a class="header__link" href="#!" aria-label="home"> <img class="header__image" src="./images/logo.svg" alt="logo"></a><img class="header__burger" src="./images/icon-menu.svg" alt="menu">
+          <ul class="header__list">
+            <li class="header__item">
+              <div class="header__box">
+                <p class="header__link">features</p><img class="header__icon" src="./images/icon-arrow-down.svg" alt="arrow"/>
+              </div>
+              <div class="header__dropdown"><a class="header__link header__sub-link" href="#!"><img class="header__icon_sub" src="./images/icon-todo.svg"/>
+                  <p class="header__text">todo list</p></a><a class="header__link header__sub-link" href="#!"><img class="header__icon_sub" src="./images/icon-calendar.svg"/>
+                  <p class="header__text">calendar</p></a><a class="header__link header__sub-link" href="#!"><img class="header__icon_sub" src="./images/icon-reminders.svg"/>
+                  <p class="header__text">reminders</p></a><a class="header__link header__sub-link" href="#!"><img class="header__icon_sub" src="./images/icon-planning.svg"/>
+                  <p class="header__text">planning</p></a>
+              </div>
+            </li>
+            <li class="header__item">
+              <div class="header__box">
+                <p class="header__link">company</p><img class="header__icon" src="./images/icon-arrow-down.svg" alt="arrow"/>
+              </div>
+              <div class="header__dropdown"><a class="header__link header__sub-link" href="#!">
+                  <p class="header__text">history</p></a><a class="header__link header__sub-link" href="#!">
+                  <p class="header__text">our team</p></a><a class="header__link header__sub-link" href="#!">
+                  <p class="header__text">blog</p></a>
+              </div>
+            </li>
+            <li class="header__item"><a class="header__link" href="#!" aria-label="careers">careers</a>
+            </li>
+            <li class="header__item"><a class="header__link" href="#!" aria-label="about">about</a>
+            </li>
+            <div class="header__login-section"><a class="header__link" href="#!" aria-label="login"> 
+                <div class="header__button header__button_borderless">Login </div></a><a class="header__link" href="#!" aria-label="login"> 
+                <div class="header__button">Register     </div></a></div>
+          </ul>
+        </div>
+      </header>
+      <main class="component__main"> 
+        <div class="main"> <img class="main__poster" src="./images/image-hero-mobile.png" alt="hero">
+          <div class="main__box"> 
+            <h1 class="main__header">Make remote work</h1>
+            <p class="main__text">
+              Get your team in sync, no matter your location. Streamline processes, 
+              create team rituals, and watch productivity soar.
+            </p><a class="main__link" href="#!" aria-label="button"> 
+              <div class="main__button">Learn more</div></a>
+            <footer class="component__footer">
+              <div class="footer"> <img class="footer__image" src="./images/client-databiz.svg" alt="image"/><img class="footer__image" src="./images/client-audiophile.svg" alt="image"/><img class="footer__image" src="./images/client-meet.svg" alt="image"/><img class="footer__image" src="./images/client-maker.svg" alt="image"/>
+              </div>
+            </footer>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>
